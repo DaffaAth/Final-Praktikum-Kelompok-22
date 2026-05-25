@@ -1,11 +1,11 @@
-package growseeds.utils;
+package org.growseeds.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Database {
+public class Database{
     private static final String URL = "jdbc:sqlite:database_baru.db";
 
     public static Connection getConnection() throws SQLException {

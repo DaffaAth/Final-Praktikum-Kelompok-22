@@ -1,7 +1,7 @@
-package growseeds.dao;
+package org.LoginMain;
 
-import growseeds.models.Login; 
-import growseeds.utils.Database; 
+import org.growseeds.models.Login; 
+import org.growseeds.utils.Database; 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,8 +16,8 @@ public class LoginDao {
     }
 
     public boolean daftarAkun(Login user) {
-        String username = user.getUsername(); 
-        String password = user.getPassword(); 
+        String username = user.getUsername();
+        String password = user.getPassword();
 
         if (password.length() < 8) {
             pesanError = "Password minimal harus 8 huruf!";
@@ -60,5 +60,15 @@ public class LoginDao {
             System.err.println("Error Login: " + e.getMessage());
             return false;
         }
+    }
+
+    // ==========================================
+    // TAMBAHKAN METHOD MAIN DI BAWAH INI UNTUK TEST
+    // ==========================================
+    public static void main(String[] args) {
+        System.out.println("Menjalankan program dari LoginDao...");
+        
+        LoginDao dao = new LoginDao();
+        // Kamu bisa melakukan test method cekLogin atau daftarAkun di sini
     }
 }
